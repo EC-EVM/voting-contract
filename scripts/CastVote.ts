@@ -14,12 +14,17 @@ async function main() {
   const proposals = process.argv.slice(2);
   if (!proposals || proposals.length < 1)
     throw new Error("Proposals not provided");
+
+   // Create public client to connect with sepolia using Alchemy
   const publicClient = createPublicClient({
     chain: sepolia,
     transport: http(`https://eth-sepolia.g.alchemy.com/v2/${providerApiKey}`),
   });
+
   const blockNumber = await publicClient.getBlockNumber();
   console.log("Last block number:", blockNumber);
+
+  // Interact with the contract as the chairperson/deployer
   const account = privateKeyToAccount(`0x${deployerPrivateKey}`);
   const deployer = createWalletClient({
     account,
@@ -38,7 +43,7 @@ async function main() {
     deployer.chain.nativeCurrency.symbol
   );
 
-  // Receiving parameters
+  // Receiving parameters - Get contractAddress from args
   const parameters = process.argv.slice(2);
   if (!parameters || parameters.length < 2)
     throw new Error("Parameters not provided");
@@ -81,7 +86,6 @@ async function main() {
   console.log("Transaction confirmed");
 
 }
-
 
 main().catch((error) => {
   console.error(error);
