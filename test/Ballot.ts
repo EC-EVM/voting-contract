@@ -5,6 +5,7 @@ import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 
 const PROPOSALS = ["Proposal 1", "Proposal 2", "Proposal 3"];
 
+// npx hardhat test
 async function deployContract() {
 	const publicClient = await viem.getPublicClient();
 	const [deployer, otherAccount] = await viem.getWalletClients();
