@@ -29,10 +29,10 @@ async function main() {
   const publicClient = createPublicClient({
     chain: sepolia,
     transport: http(`https://eth-sepolia.g.alchemy.com/v2/${providerApiKey}`),
-});
+  });
 
-// Interact with the contract as the chairperson/deployer
-const account = privateKeyToAccount(`0x${deployerPrivateKey}`);
+  // Interact with the contract as the chairperson/deployer
+  const account = privateKeyToAccount(`0x${deployerPrivateKey}`);
   const deployer = createWalletClient({
     account,
     chain: sepolia,
@@ -43,30 +43,29 @@ const account = privateKeyToAccount(`0x${deployerPrivateKey}`);
     address: deployer.account.address,
   });
 
-// For each wallet address in wallets, give them rights to vote IF the address is correct
-for (const walletAddress of wallets) {
-    const wallet_ = walletAddress as `0x${string}`;
+  // For each wallet address in wallets, give them rights to vote IF the address is correct
+  for (const walletAddress of wallets) {
+  const wallet_ = walletAddress as `0x${string}`;
     if (!wallet_) return;
     if (!/^0x[a-fA-F0-9]{40}$/.test(walletAddress)) {
       console.log(`\nInvalid wallet address arg: ${wallet_}`);
       return;
-    }
+  }
 
-    console.log(`\nGiving ${walletAddress} right to vote...`);
-    const hash = await deployer.writeContract({
+  console.log(`\nGiving ${walletAddress} right to vote...`);
+  const hash = await deployer.writeContract({
         address: contractAddress,
         abi,
         functionName: "giveRightToVote",
         args: [wallet_],
-    });
+  });
 
+  console.log("Transaction hash:", hash);
+  console.log("Waiting for confirmations...");
+  const receipt = await publicClient.waitForTransactionReceipt({ hash });
     
-    console.log("Transaction hash:", hash);
-    console.log("Waiting for confirmations...");
-    const receipt = await publicClient.waitForTransactionReceipt({ hash });
-    
-    console.log(`Wallet ${walletAddress} has been given a right to vote`);
-    };
+  console.log(`Wallet ${walletAddress} has been given a right to vote`);
+  };
 }
 
 main().catch((error) => {
