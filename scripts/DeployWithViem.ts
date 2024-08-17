@@ -5,22 +5,29 @@ import { abi, bytecode } from "../artifacts/contracts/Ballot.sol/Ballot.json";
 
 dotenv.config();
 
-import { createPublicClient, http, createWalletClient, formatEther, toHex, hexToString } from "viem";
+import { createPublicClient, http, createWalletClient, formatEther, toHex, hexToString, Address } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
 
 const deployerPrivateKey = process.env.PRIVATE_KEY || "";
 const providerApiKey = process.env.ALCHEMY_API_KEY || "";
 
 async function main() {
+  // npx ts-node --files ./scripts/DeployWithViem.ts "arg1" "arg2" "arg3"
+
+  // Take arguments and cut the first two args as it's not needed
   const proposals = process.argv.slice(2);
   if (!proposals || proposals.length < 1)
     throw new Error("Proposals not provided");
+
+  // Create public client to connect with sepolia using Alchemy
   const publicClient = createPublicClient({
     chain: sepolia,
     transport: http(`https://eth-sepolia.g.alchemy.com/v2/${providerApiKey}`),
   });
   const blockNumber = await publicClient.getBlockNumber();
   console.log("Last block number:", blockNumber);
+
+  // Connect the wallet account that we're going to deploy with
   const account = privateKeyToAccount(`0x${deployerPrivateKey}`);
   const deployer = createWalletClient({
     account,
@@ -39,7 +46,7 @@ async function main() {
     deployer.chain.nativeCurrency.symbol
   );
   
-  //
+  // Deploying the contract on Sepolia network
   console.log("\nDeploying Ballot contract");
   const hash = await deployer.deployContract({
     abi,
@@ -50,6 +57,24 @@ async function main() {
   console.log("Waiting for confirmations...");
   const receipt = await publicClient.waitForTransactionReceipt({ hash });
   console.log("Ballot contract deployed to:", receipt.contractAddress);
+
+  //-- Trying to read the variable from the contract
+  if (!receipt.contractAddress) {
+    console.log("Contract deployment failed");
+    return;
+  } 
+
+  console.log("Proposals: ");
+  for (let index = 0; index < proposals.length; index++) {
+    const proposal = (await publicClient.readContract({
+      address: receipt.contractAddress as Address,
+      abi,
+      functionName: "proposals",
+      args: [BigInt(index)],
+    })) as any[];
+    const name = hexToString(proposal[0], { size: 32 });
+    console.log({ index, name, proposal });
+  }
 
   // const parameters = process.argv.slice(2);
   // if (!parameters || parameters.length < 2)
@@ -74,7 +99,6 @@ async function main() {
   // console.log("Confirm? (Y/n)");
 
 }
-
 
 main().catch((error) => {
   console.error(error);
