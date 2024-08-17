@@ -16,6 +16,12 @@ The easiest way is to run the CheckVoter.ts script below to check if the address
 npx ts-node --files ./scripts/CheckVoter.ts [contractAddress] [address1] 
 ```
 
+You can also run the DeployWithViem.ts script below to deploy a new contract:
+```shell 
+npx ts-node --files ./scripts/DeployWithViem.ts [contractAddress] [address1] 
+npx ts-node --files ./scripts/DeployWithViem.ts ramen pizza burger 
+```
+
 
 ### Installation
 
