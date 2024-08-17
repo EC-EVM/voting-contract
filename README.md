@@ -11,10 +11,10 @@ At the end of the voting time, winningProposal() will return the proposal with t
 
 ### Installation
 
--copy all files/folders from project2 except artifacts, cache, node_modules< br / > 
--create new project3 and paste here< br / > 
--make sure you have the .env file (.gitignore it)< br / > 
-create a scripts folder under the root project4 folder & then create a DeployWithHardhat.ts file under scripts directory< br / > 
+-copy all files/folders from project2 except artifacts, cache, node_modules<br /> 
+-create new project3 and paste here<br /> 
+-make sure you have the .env file (.gitignore it)<br /> 
+create a scripts folder under the root project4 folder & then create a DeployWithHardhat.ts file under scripts directory<br /> 
 
 ### Prerequisites 
 ```shell
