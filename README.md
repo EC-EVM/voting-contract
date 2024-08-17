@@ -15,6 +15,7 @@ The easiest way is to run the CheckVoter.ts script below to check if the address
 ```shell 
 npx ts-node --files ./scripts/CheckVoter.ts [contractAddress] [address1] 
 ```
+Sample contract: https://sepolia.etherscan.io/address/0x329590c91563584091f6f4d8909728eb1050efec
 
 You can also run the DeployWithViem.ts script below to deploy a new contract:
 ```shell 
