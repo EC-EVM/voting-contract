@@ -9,6 +9,14 @@ At the end of the voting time, winningProposal() will return the proposal with t
 
 ## Getting Started
 
+### Running a script
+
+The easiest way is to run the CheckVoter.ts script below to check if the address has a voting right/weight, the address has already voted, etc:
+```shell 
+npx ts-node --files ./scripts/CheckVoter.ts [contractAddress] [address1] <br /> 
+```
+
+
 ### Installation
 
 -copy all files/folders from project2 except artifacts, cache, node_modules<br /> 
