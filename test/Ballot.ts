@@ -3,7 +3,7 @@ import { toHex, hexToString } from "viem";
 import { viem } from "hardhat";
 import { loadFixture } from "@nomicfoundation/hardhat-network-helpers";
 
-const PROPOSALS = ["Proposal 1", "Proposal 2", "Proposal 3"];
+const PROPOSALS = ["ramen", "pizza", "burger"];
 
 // npx hardhat test
 async function deployContract() {
