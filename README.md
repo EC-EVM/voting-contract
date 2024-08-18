@@ -26,8 +26,7 @@ You can also run the PrintResults.ts script below to check the result of votes:
 npx ts-node --files ./scripts/PrintResults.ts 0x329590c91563584091f6f4d8909728eb1050efec 3 
 ```
 
-
-You can also run the DeployWithViem.ts script below to deploy a new contract:
+To deploy a new contract you can run the DeployWithViem.ts script below:
 ```shell 
 npx ts-node --files ./scripts/DeployWithViem.ts 
 npx ts-node --files ./scripts/DeployWithViem.ts ramen pizza burger 
