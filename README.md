@@ -18,7 +18,9 @@ npx ts-node --files ./scripts/CheckVoter.ts [contractAddress] [address1]
 Sample contract: https://sepolia.etherscan.io/address/0x329590c91563584091f6f4d8909728eb1050efec< br/>
 
 <img width="667" alt="Screenshot 2024-08-17 at 5 40 34 PM" src="https://github.com/user-attachments/assets/0a027dc5-6606-4f4c-a87b-605faf46e1eb">
-< br/>
+
+</br>
+
 You can also run the PrintResults.ts script below to check the result of votes:
 ```shell 
 npx ts-node --files ./scripts/PrintResults.ts 0x329590c91563584091f6f4d8909728eb1050efec 3 
