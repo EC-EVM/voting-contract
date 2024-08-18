@@ -90,3 +90,6 @@ npm viem
 npm install --save-dev @nomicfoundation/hardhat-chai-matchers
 ```
 
+## References
+<img width="516" alt="Screenshot 2024-08-18 at 3 32 13 PM" src="https://github.com/user-attachments/assets/1ad7cd81-ce60-4f71-a9bb-b07b8c541284">
+
