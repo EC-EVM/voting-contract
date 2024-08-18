@@ -8,6 +8,10 @@ dotenv.config();
 
 const providerApiKey = process.env.ALCHEMY_API_KEY || "";
 
+// npx ts-node --files ./scripts/PrintResults.ts [contractAddress] [number]
+// npx ts-node --files ./scripts/PrintResults.ts 0x329590C91563584091f6f4D8909728EB1050EFEC 3
+
+
 function validateParameters(parameters: string[]) {
   console.log('parameters', parameters)
   if (!parameters || parameters.length < 2)
@@ -26,6 +30,7 @@ function validateParameters(parameters: string[]) {
 }
 
 async function main() {
+
   const { contractAddress, numberOfProposals } = validateParameters(process.argv.slice(2));
 
   const publicClient = createPublicClient({
