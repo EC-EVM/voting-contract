@@ -47,6 +47,19 @@ node -v
 v20.14.0
 ```
 
+## Group 2
+
+| Unique id | Discord username    |
+| --------- | ------------------- |
+| RAAzLF    | @GRAVER 👾                |
+| 2SyBp0    | @wackozacco        |
+| 10exgX    | @δαλλασκατ    |
+| r5YSqY    | @imchrismayfield          |
+| HhHAQw    | @swooz                |
+| Pok9XD    | @Timster            |
+| T5zGzt    | @Carl Youngblood            |
+
+
 ## Hardhat 
 ```shell
 npm init
