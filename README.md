@@ -15,7 +15,7 @@ The easiest way is to run the CheckVoter.ts script below to check if the address
 ```shell 
 npx ts-node --files ./scripts/CheckVoter.ts [contractAddress] [address1] 
 ```
-Sample contract: https://sepolia.etherscan.io/address/0x329590c91563584091f6f4d8909728eb1050efec< br/>
+Sample contract: https://sepolia.etherscan.io/address/0x329590c91563584091f6f4d8909728eb1050efec
 
 <img width="667" alt="Screenshot 2024-08-17 at 5 40 34 PM" src="https://github.com/user-attachments/assets/0a027dc5-6606-4f4c-a87b-605faf46e1eb">
 
