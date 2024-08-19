@@ -70,6 +70,7 @@ This is a group activity for at least 3 students:
     1. `npx ts-node --files scripts/CastVote.ts 0x329590c91563584091f6f4d8909728eb1050efec 3`
     2. [TxHash (0x55631F25...C58241bE4)](https://sepolia.etherscan.io/tx/0xcfa4e41f10117d3dfc2edc5c95a838b8b762723d8651e0a69b5af4eb74b51c92)
     3. [Script ↗](./scripts/CastVote.ts)
+       
        ![image (5)](https://github.com/user-attachments/assets/abe1a043-8eb6-4df8-b22b-e8fa53353823)
 
     ---
@@ -78,6 +79,7 @@ This is a group activity for at least 3 students:
     1. `npx ts-node --files scripts/CastVote.ts 0x329590c91563584091f6f4d8909728eb1050efec 3`
     2. [TxHash (0x822D80eC...51E720EAa)](https://sepolia.etherscan.io/tx/0x6ca8316ad72a9ad8b614692fb87c9ccf7634427dffe40631d1b78e0ad4c9a17e)
     3. [Script ↗](./scripts/CastVote.ts)
+  
        <img width="456" alt="Screenshot 2024-08-18 at 11 50 27 PM" src="https://github.com/user-attachments/assets/fb70a3a7-02ff-4004-807c-4b4cf42c38d1">
 
 
