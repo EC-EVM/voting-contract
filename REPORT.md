@@ -63,7 +63,9 @@ This is a group activity for at least 3 students:
 5. 💫 **[Pass]:** Call `winnerName` view function
     1. `npx ts-node --files scripts/PrintResults.ts 0x329590c91563584091f6f4d8909728eb1050efec`
     2. [Script ↗](./scripts/PrintResults.ts)
-
+  
+    <img width="711" alt="Screenshot 2024-08-19 at 12 21 20 AM" src="https://github.com/user-attachments/assets/a8c45b99-241d-44cc-b071-6d6afb8c6348">
+   
     ---
 
 6. 💫 **[Pass]:** Call `vote` function
