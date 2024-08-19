@@ -7,8 +7,13 @@ const PROPOSALS = ["ramen", "pizza", "burger"];
 
 // npx hardhat test test/Ballot.ts
 async function deployContract() {
+	
+	// Get public client for interacting with the blockchain
 	const publicClient = await viem.getPublicClient();
+	if (!publicClient) throw new Error("Failed to initialize public client.");
+
 	const [deployer, otherAccount] = await viem.getWalletClients();
+
 	const ballotContract = await viem.deployContract("Ballot", [
 		PROPOSALS.map((prop) => toHex(prop, { size: 32 })),
 	]);

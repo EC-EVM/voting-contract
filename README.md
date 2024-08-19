@@ -86,7 +86,7 @@ rm ./contracts/*
 rm ./ignition/*
 rm ./test/*
 npx hardhat clean
-npm viem
+npm i viem
 npm install --save-dev @nomicfoundation/hardhat-chai-matchers
 ```
 
