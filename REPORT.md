@@ -36,7 +36,8 @@ This is a group activity for at least 3 students:
     1. `npx ts-node --files scripts/CastVote.ts 0x329590c91563584091f6f4d8909728eb1050efec 2`
     2. [TxHash (0x81...91b0)](https://sepolia.etherscan.io/tx/0x5b98f2f64a132b7b4cd79cf82c56bbf86c4eefdb0e8bca9fee1bc6603c518a00)
     3. [Script ↗](./scripts/CastVote.ts)
-    
+    ![Screenshot_2024-08-18_at_4 06 51_AM](https://github.com/user-attachments/assets/ba01e143-a838-481d-9621-191be39c01b9)
+
     
     ---
     
